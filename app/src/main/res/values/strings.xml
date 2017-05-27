@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">ProyectoFinal</string>
+    <string name="ingreso">Ingreso</string>
+    <string name="fecha">Fecha</string>
+    <string name="garantias">Garantias</string>
+    <string name="prestamos">Prestamos</string>
+    <string name="productos_disponibles">Productos Disponibles</string>
+    <string name="cotizaciones">Cotizaciones</string>
+    <string name="equipos_garantias">Equipos En Garantia</string>
+    <string name="cliente">Cliente</string>
+    <string name="telefono">Telefono</string>
+    <string name="correo">Correo</string>
+    <string name="equipo">Equipo</string>
+    <string name="modelo">Modelo</string>
+    <string name="serie">Serie</string>
+    <string name="RMA">RMA</string>
+    <string name="buscar">Buscar</string>
+    <string name="registrar">Registrar</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="error_1">Por favor digite el RMA</string>
+    <string name="error1_4">Rma existente!</string>
+    <string name="error_2">Por favor digite el Cliente</string>
+    <string name="error_3">Por favor digite el Telefono</string>
+    <string name="error_4">Por favor digite el Correo</string>
+    <string name="error4_1">correo no valido, ejemplo: nombre@correo.com</string>
+    <string name="error_5">Por favor digite el Equipo</string>
+    <string name="error_6">Por favor digite el Modelo</string>
+    <string name="error_7">Por favor digite la Serie</string>
+    <string name="error_8">Por favor digite la Fecha</string>
+    <string name="numero">No.</string>
+    <string name="registro1">Registrado exitosamente!</string>
+    <string name="registro2">Modificado exitosamente!</string>
+    <string name="confirmacion">Confirmacion</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="mensaje1">¿Está seguro que desea eliminar este registro?</string>
+    <string name="mensaje2">Registo eliminado exitosamente!</string>
+    <string name="pguardado">Producto guardado exitosamente!</string>
+    <string name="ingreso_producto">Ingreso De Producto</string>
+    <string name="lista_producto">Lista De Productos Disponibles</string>
+    <string name="productos">Productos</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="modelo350">be350glm</string>
+    <string name="modelo50">bge50ml</string>
+    <string name="modelo24">br24bpg</string>
+    <string name="modelo1000">ups1000</string>
+    <string name="modelo1300">ups1300</string>
+    <string name="modelo1500">ups1500</string>
+    <string-array name="opciones">
+        <item>@string/garantias</item>
+        <item>@string/prestamos</item>
+        <item>@string/productos_disponibles</item>
+        <item>@string/cotizaciones</item>
+    </string-array>
+    <string-array name="garantias">
+        <item>@string/ingreso</item>
+        <item>@string/equipos_garantias</item>
+    </string-array>
+    <string-array name="productos">
+        <item>@string/ingreso_producto</item>
+        <item>@string/lista_producto</item>
+    </string-array>
+    <string-array name="modelos">
+        <item>@string/modelo1000</item>
+        <item>@string/modelo1300</item>
+        <item>@string/modelo1500</item>
+        <item>@string/modelo24</item>
+        <item>@string/modelo50</item>
+        <item>@string/modelo350</item>
+    </string-array>
+</resources>

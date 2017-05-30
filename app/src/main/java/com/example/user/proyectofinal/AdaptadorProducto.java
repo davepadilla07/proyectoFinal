@@ -50,7 +50,7 @@ public class AdaptadorProducto extends BaseAdapter {
         itemView = inflater.inflate(R.layout.item_producto,null);
 
         cajaserie= (TextView)itemView.findViewById(R.id.txtSerieP);
-        cajaModelo=(TextView)itemView.findViewById(R.id.txtSeriePro);
+        cajaModelo=(TextView)itemView.findViewById(R.id.txtModeloP);
         cajaDescripcion=(TextView)itemView.findViewById(R.id.txtDescripcionP);
         cajaCliente=(TextView)itemView.findViewById(R.id.txtClienteP);
         foto = (ImageView)itemView.findViewById(R.id.imgFoto);
@@ -59,7 +59,7 @@ public class AdaptadorProducto extends BaseAdapter {
         cajaModelo.setText(productos.get(position).getModelo());
         cajaserie.setText(productos.get(position).getSerie());
         cajaDescripcion.setText(productos.get(position).getDescripcion());
-        cajaCliente.setText(productos.get(position).getDescripcion());
+        cajaCliente.setText(productos.get(position).getCliente());
 
         return itemView;
     }

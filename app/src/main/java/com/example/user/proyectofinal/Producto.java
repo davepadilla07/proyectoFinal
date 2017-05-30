@@ -69,11 +69,11 @@ public class Producto {
         String sql;
 
         //Abrir la conexion de base datos en modo escritura
-        ProductoSQLiteOpenHelper aux = new ProductoSQLiteOpenHelper(contexto,"DBgarantias",null,6);
+        ProductoSQLiteOpenHelper aux = new ProductoSQLiteOpenHelper(contexto,"DBgarantias",null);
         db = aux.getWritableDatabase();
 
         //insertar forma 1
-        sql = "INSERT INTO productos values('"+this.getFoto()+"','"+this.getSerie()+"','"+this.getModelo()+"','"+this.getDescripcion()+"','"+this.getCliente()+"')";
+        sql = "INSERT INTO prestamos values('"+this.getFoto()+"','"+this.getSerie()+"','"+this.getModelo()+"','"+this.getDescripcion()+"','"+this.getCliente()+"')";
 
         db.execSQL(sql);
         db.close();

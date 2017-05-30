@@ -49,4 +49,7 @@
     <string name="registro2">Successfully modified</string>
     <string name="serie">Series</string>
     <string name="telefono">Phone</string>
+    <string name="clientes">Clients</string>
+    <string name="lista_prestamos">Lending List</string>
+    <string name="prestamo">Loan</string>
 </resources>

@@ -24,10 +24,9 @@ public class Ingreso_Producto extends AppCompatActivity {
         setContentView(R.layout.activity_ingreso__producto);
 
         cajaModelo = (EditText)findViewById(R.id.txtModelo);
-        cajaSerie = (EditText)findViewById(R.id.txtSeriePro);
+        cajaSerie = (EditText)findViewById(R.id.txtSerie);
         cajaDescripcion = (EditText)findViewById(R.id.txtDescripcion);
         cajaCliente = (EditText)findViewById(R.id.txtClientePro);
-
         comboModelo=(Spinner)findViewById(R.id.cmbModelo);
         opc=this.getResources().getStringArray(R.array.modelos);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,opc);
@@ -51,22 +50,22 @@ public class Ingreso_Producto extends AppCompatActivity {
             descripcion = cajaDescripcion.getText().toString();
             cliente = cajaCliente.getText().toString();
 
-            if (modelo.equalsIgnoreCase(getResources().getString(R.string.modelo350))){
+            if (modelo.equalsIgnoreCase(getResources().getString(R.string.be350glm))){
                 numero=0;
             }
-            if (modelo.equalsIgnoreCase(getResources().getString(R.string.modelo350))){
+            if (modelo.equalsIgnoreCase(getResources().getString(R.string.bge50ml))){
                 numero=1;
             }
-            if (modelo.equalsIgnoreCase(getResources().getString(R.string.modelo350))){
+            if (modelo.equalsIgnoreCase(getResources().getString(R.string.br24bpg))){
                 numero=2;
             }
-            if (modelo.equalsIgnoreCase(getResources().getString(R.string.modelo350))){
+            if (modelo.equalsIgnoreCase(getResources().getString(R.string.ups1000))){
                 numero=3;
             }
-            if (modelo.equalsIgnoreCase(getResources().getString(R.string.modelo350))){
+            if (modelo.equalsIgnoreCase(getResources().getString(R.string.ups1300))){
                 numero=4;
             }
-            if (modelo.equalsIgnoreCase(getResources().getString(R.string.modelo350))){
+            if (modelo.equalsIgnoreCase(getResources().getString(R.string.ups1500))){
                 numero=5;
             }
 
@@ -120,11 +119,12 @@ public class Ingreso_Producto extends AppCompatActivity {
 
 
     public boolean validarTodo(){
-
+/*
         if(cajaModelo.getText().toString().isEmpty()){
             cajaModelo.setError(getResources().getString(R.string.error_6));
             return false;
         }
+        */
         if(cajaSerie.getText().toString().isEmpty()){
             cajaSerie.setError(getResources().getString(R.string.error_7));
             return false;
@@ -141,19 +141,21 @@ public class Ingreso_Producto extends AppCompatActivity {
         }
         return true;
     }
+
+    public void borrar(View v){limpiar();}
+
     public void limpiar(){
         cajaSerie.setText("");
-        cajaModelo.setText("");
+        comboModelo.setSelection(0);
         cajaDescripcion.setText("");
         cajaCliente.setText("");
         cajaSerie.requestFocus();
-
     }
 
     public void buscar(View v){
         Producto p;
         if(validarSerie()) {
-            p = Datos.buscarProducto(getApplicationContext(), cajaSerie.getText().toString());
+            p = Datos.buscarPrestamo(getApplicationContext(), cajaSerie.getText().toString());
             if(p!=null){
                 cajaSerie.setText(p.getSerie());
                 cajaModelo.setText(p.getModelo());

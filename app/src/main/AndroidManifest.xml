@@ -22,6 +22,8 @@
         <activity android:name=".Productos_Disponibles" />
         <activity android:name=".Ingreso_Producto" />
         <activity android:name=".Lista_Productos" />
+        <activity android:name=".Clientes" />
+        <activity android:name=".Ingresar_Cliente"></activity>
     </application>
 
 </manifest>

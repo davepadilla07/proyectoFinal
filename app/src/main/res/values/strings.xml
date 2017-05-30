@@ -42,32 +42,53 @@
     <string name="lista_producto">Lista De Productos Disponibles</string>
     <string name="productos">Productos</string>
     <string name="descripcion">Descripcion</string>
-    <string name="modelo350">be350glm</string>
-    <string name="modelo50">bge50ml</string>
-    <string name="modelo24">br24bpg</string>
-    <string name="modelo1000">ups1000</string>
-    <string name="modelo1300">ups1300</string>
-    <string name="modelo1500">ups1500</string>
+    <string name="be350glm">be350glm</string>
+    <string name="bge50ml">bge50ml</string>
+    <string name="br24bpg">br24bpg</string>
+    <string name="ups1000">ups1000</string>
+    <string name="ups1300">ups1300</string>
+    <string name="ups1500">ups1500</string>
+    <string name="clientes">Clientes</string>
+    <string name="prestamo">Prestamo</string>
+    <string name="lista_prestamos">Lista De Prestamos</string>
+    <string name="registrar_clientes">Registrar Clientes</string>
+    <string name="lista_clientes">Lista De Clientes</string>
+    <string name="nit">Nit</string>
+    <string name="cedula">Cedula</string>
+    <string name="nit_cedula">Nit o Cedula</string>
+    <string name="nombre">Nombre</string>
+    <string name="direccion">Direccion</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="error_9">Por Favor Digite Nit o Cedula</string>
+    <string name="error_10">Por Favor Digite Nombre Del Cliente</string>
+    <string name="error_11">Por Favor Digite Telefono Del Cliente</string>
+    <string name="error_12">Por Favor Digite Correo Del Cliente</string>
+    <string name="error_13">Por Favor Digite Direccion Del Cliente</string>
+    <string name="error_14">Por Favor Digite Ciudad Del Cliente</string>
+    <string name="mensaje_9">Cliente Guardado Exitosamente</string>
+    <string-array name="clientes">
+        <item>@string/registrar_clientes</item>
+        <item>@string/lista_clientes</item>
+    </string-array>
     <string-array name="opciones">
         <item>@string/garantias</item>
         <item>@string/prestamos</item>
-        <item>@string/productos_disponibles</item>
-        <item>@string/cotizaciones</item>
+        <item>@string/clientes</item>
     </string-array>
     <string-array name="garantias">
         <item>@string/ingreso</item>
         <item>@string/equipos_garantias</item>
     </string-array>
     <string-array name="productos">
-        <item>@string/ingreso_producto</item>
-        <item>@string/lista_producto</item>
+        <item>@string/prestamo</item>
+        <item>@string/lista_prestamos</item>
     </string-array>
     <string-array name="modelos">
-        <item>@string/modelo1000</item>
-        <item>@string/modelo1300</item>
-        <item>@string/modelo1500</item>
-        <item>@string/modelo24</item>
-        <item>@string/modelo50</item>
-        <item>@string/modelo350</item>
+        <item>@string/be350glm</item>
+        <item>@string/bge50ml</item>
+        <item>@string/br24bpg</item>
+        <item>@string/ups1000</item>
+        <item>@string/ups1300</item>
+        <item>@string/ups1500</item>
     </string-array>
 </resources>

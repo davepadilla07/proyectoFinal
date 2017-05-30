@@ -20,7 +20,7 @@
             app:srcCompat="@drawable/ups1000" />
 
         <TextView
-            android:id="@+id/txtSeriePro"
+            android:id="@+id/txtModeloP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -36,31 +36,31 @@
             android:id="@+id/txtSerieP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/txtSeriePro"
-            android:layout_alignStart="@+id/txtSeriePro"
-            android:layout_below="@+id/txtSeriePro"
-            android:layout_marginTop="10dp"
             android:text="TextView"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_above="@+id/txtDescripcionP"
+            android:layout_alignLeft="@+id/txtModeloP"
+            android:layout_alignStart="@+id/txtModeloP"
+            android:layout_marginBottom="11dp" />
 
         <TextView
             android:id="@+id/txtDescripcionP"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/txtClienteP"
             android:layout_alignLeft="@+id/txtSerieP"
             android:layout_alignStart="@+id/txtSerieP"
-            android:layout_below="@+id/txtSerieP"
-            android:layout_marginTop="13dp"
+            android:layout_marginBottom="15dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/txtClienteP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imgFoto"
             android:layout_alignLeft="@+id/txtDescripcionP"
             android:layout_alignStart="@+id/txtDescripcionP"
-            android:layout_below="@+id/txtDescripcionP"
-            android:layout_marginTop="13dp"
+            android:layout_marginBottom="31dp"
             android:text="TextView"
             android:textSize="18sp" />
 

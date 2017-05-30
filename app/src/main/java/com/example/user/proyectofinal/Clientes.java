@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class Principal extends AppCompatActivity {
+public class Clientes extends AppCompatActivity {
 
     private ListView opciones;
     private String[] opc;
@@ -18,27 +18,22 @@ public class Principal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_principal);
+        setContentView(R.layout.activity_clientes);
 
-        opciones = (ListView)findViewById(R.id.lsOpciones);
-        opc = getResources().getStringArray(R.array.opciones);
+        opciones = (ListView)findViewById(R.id.lsClientes);
+        opc = getResources().getStringArray(R.array.clientes);
         adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,opc);
         opciones.setAdapter(adapter);
-
         opciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0:
-                        i = new Intent(Principal.this,Garantias.class);
+                        i = new Intent(Clientes.this,Ingresar_Cliente.class);
                         startActivity(i);
                         break;
                     case 1:
-                        i = new Intent(Principal.this,Productos_Disponibles.class);
-                        startActivity(i);
-                        break;
-                    case 2:
-                        i = new Intent(Principal.this,Clientes.class);
+                        i = new Intent(Clientes.this,Lista_Productos.class);
                         startActivity(i);
                         break;
                 }

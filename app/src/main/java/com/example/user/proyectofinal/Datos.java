@@ -76,17 +76,17 @@ public class Datos {
     }
 
 
-    public static ArrayList<Producto> traerProducto(Context contexto){
+    public static ArrayList<Producto> traerPrestamo(Context contexto){
         ArrayList<Producto> producto = new ArrayList<>();
 
         SQLiteDatabase db;
         String sql, foto, serie, modelo, descripcion, cliente;
         Producto p;
 
-        ProductoSQLiteOpenHelper aux = new ProductoSQLiteOpenHelper(contexto,"DBgarantias",null,6);
+        ProductoSQLiteOpenHelper aux = new ProductoSQLiteOpenHelper(contexto,"DBgarantias",null);
         db = aux.getReadableDatabase();
 
-        sql ="select * from productos";
+        sql ="select * from prestamos";
         Cursor c = db.rawQuery(sql,null);
 
         if(c.moveToFirst()){
@@ -107,18 +107,18 @@ public class Datos {
         return producto;
     }
 
-    public static Producto buscarProducto(Context contexto, String ser){
+    public static Producto buscarPrestamo(Context contexto, String ser){
 
         //Declarar variables
         SQLiteDatabase db;
         String sql, foto, serie, modelo, descripcion, cliente;
         Producto p=null;
         //Abrir conexión de lectura
-        ProductoSQLiteOpenHelper aux = new ProductoSQLiteOpenHelper(contexto,"DBgarantias",null,6);
+        ProductoSQLiteOpenHelper aux = new ProductoSQLiteOpenHelper(contexto,"DBgarantias",null);
         db = aux.getReadableDatabase();
 
         //Cursor
-        sql ="select * from productos where serie ='"+ser+"'";
+        sql ="select * from prestamos where serie ='"+ser+"'";
         Cursor c = db.rawQuery(sql,null);
 
         //Recorrido del cursor
@@ -132,6 +132,67 @@ public class Datos {
         }
         db.close();
         return p;
+    }
+
+    public static ArrayList<Crea_Cliente> traerCliente(Context contexto){
+        ArrayList<Crea_Cliente> cliente = new ArrayList<>();
+
+        SQLiteDatabase db;
+        String sql, tipo, nitced, nombre, telefono, correo, direccion, ciudad;
+        Crea_Cliente cl;
+
+        Crear_ClienteSQLiteOpenHelper aux = new Crear_ClienteSQLiteOpenHelper(contexto,"DBgarantias",null);
+        db = aux.getReadableDatabase();
+
+        sql ="select * from clientes";
+        Cursor c = db.rawQuery(sql,null);
+
+        if(c.moveToFirst()){
+            do{
+                tipo = c.getString(0);
+                nitced = c.getString(1);
+                nombre = c.getString(2);
+                telefono = c.getString(3);
+                correo = c.getString(4);
+                direccion = c.getString(5);
+                ciudad = c.getString(6);
+
+                cl = new Crea_Cliente(tipo, nitced, nombre, telefono, correo, direccion, ciudad);
+                cliente.add(cl);
+
+            }while (c.moveToNext());
+        }
+        db.close();
+        return cliente;
+    }
+
+    public static Crea_Cliente buscarCliente(Context contexto, String nitc){
+
+        //Declarar variables
+        SQLiteDatabase db;
+        String sql, tipo, nitced, nombre, telefono, correo, direccion, ciudad;
+        Crea_Cliente cl=null;
+        //Abrir conexión de lectura
+        Crear_ClienteSQLiteOpenHelper aux = new Crear_ClienteSQLiteOpenHelper(contexto,"DBgarantias",null);
+        db = aux.getReadableDatabase();
+
+        //Cursor
+        sql ="select * from clientes where nitced ='"+nitc+"'";
+        Cursor c = db.rawQuery(sql,null);
+
+        //Recorrido del cursor
+        if(c.moveToFirst()){
+            tipo = c.getString(0);
+            nitced = c.getString(1);
+            nombre = c.getString(2);
+            telefono = c.getString(3);
+            correo = c.getString(4);
+            direccion = c.getString(5);
+            ciudad = c.getString(6);
+            cl = new Crea_Cliente(tipo, nitced, nombre, telefono, correo, direccion, ciudad);
+        }
+        db.close();
+        return cl;
     }
 
 }

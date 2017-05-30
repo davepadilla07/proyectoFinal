@@ -9,9 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class ProductoSQLiteOpenHelper extends SQLiteOpenHelper {
-    private String sql = "CREATE TABLE productos(foto text, serie text, modelo text, descripcion text, cliente text)";
-
-    public ProductoSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    private String sql = "CREATE TABLE prestamos(foto text, serie text, modelo text, descripcion text, cliente text)";
+    static int version=6;
+    public ProductoSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory) {
         super(context, name, factory, version);
     }
 
@@ -22,7 +22,7 @@ public class ProductoSQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS productos");
+        db.execSQL("DROP TABLE IF EXISTS prestamos");
         db.execSQL(sql);
     }
 }

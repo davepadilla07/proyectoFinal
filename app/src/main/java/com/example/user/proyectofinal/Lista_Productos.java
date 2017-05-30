@@ -17,7 +17,7 @@ public class Lista_Productos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista__productos);
         lstPersonalizado = (ListView)findViewById(R.id.lsListadoProductos);
-        productos = Datos.traerProducto(getApplicationContext());
+        productos = Datos.traerPrestamo(getApplicationContext());
         adapter = new AdaptadorProducto(getApplicationContext(),productos);
         lstPersonalizado.setAdapter(adapter);
 

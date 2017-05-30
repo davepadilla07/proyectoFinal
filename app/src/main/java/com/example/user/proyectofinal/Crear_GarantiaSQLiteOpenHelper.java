@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class Crear_GarantiaSQLiteOpenHelper extends SQLiteOpenHelper {
     private String sql = "CREATE TABLE garantias(rma text, cliente text, telefono text, correo text, equipo text, modelo text, serie text, fecha text)";
-    static int version=6;
+    static int version=4;
     public Crear_GarantiaSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory) {
         super(context, name, factory,version);
     }

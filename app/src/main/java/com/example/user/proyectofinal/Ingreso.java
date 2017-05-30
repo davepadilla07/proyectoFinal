@@ -69,38 +69,47 @@ public class Ingreso extends AppCompatActivity implements View.OnClickListener {
 
         if(cajaRMA.getText().toString().isEmpty()){
             cajaRMA.setError(getResources().getString(R.string.error_1));
+            cajaRMA.requestFocus();
             return false;
         }
         if(cajaCliente.getText().toString().isEmpty()){
             cajaCliente.setError(getResources().getString(R.string.error_2));
+            cajaCliente.requestFocus();
             return false;
         }
         if(cajaTelefono.getText().toString().isEmpty()){
             cajaTelefono.setError(getResources().getString(R.string.error_3));
+            cajaTelefono.requestFocus();
             return false;
         }
         if(cajaCorreo.getText().toString().isEmpty()){
             cajaCorreo.setError(getResources().getString(R.string.error_4));
+            cajaCorreo.requestFocus();
             return false;
         }
         if (!isEmailValid(cajaCorreo.getText().toString())){
             cajaCorreo.setError(getResources().getString(R.string.error4_1));
+            cajaCorreo.requestFocus();
             return false;
         }
         if(cajaEquipo.getText().toString().isEmpty()){
             cajaEquipo.setError(getResources().getString(R.string.error_5));
+            cajaEquipo.requestFocus();
             return false;
         }
         if(cajaModelo.getText().toString().isEmpty()){
             cajaModelo.setError(getResources().getString(R.string.error_6));
+            cajaModelo.requestFocus();
             return false;
         }
         if(cajaSerie.getText().toString().isEmpty()){
             cajaSerie.setError(getResources().getString(R.string.error_7));
+            cajaSerie.requestFocus();
             return false;
         }
         if(cajaFecha.getText().toString().isEmpty()){
             cajaFecha.setError(getResources().getString(R.string.error_8));
+            cajaFecha.requestFocus();
             return false;
         }
         return  true;

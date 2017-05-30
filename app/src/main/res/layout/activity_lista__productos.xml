@@ -6,10 +6,26 @@
     android:layout_height="match_parent"
     tools:context="com.example.user.proyectofinal.Lista_Productos">
 
-    <ListView
-        android:id="@+id/lsListadoProductos"
+    <HorizontalScrollView
         android:layout_width="368dp"
         android:layout_height="495dp"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+        tools:layout_editor_absoluteY="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <ListView
+                android:id="@+id/lsListadoProductos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
 </android.support.constraint.ConstraintLayout>

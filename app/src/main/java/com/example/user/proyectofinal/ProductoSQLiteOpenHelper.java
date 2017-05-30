@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class ProductoSQLiteOpenHelper extends SQLiteOpenHelper {
     private String sql = "CREATE TABLE prestamos(foto text, serie text, modelo text, descripcion text, cliente text)";
-    static int version=6;
+    static int version=4;
     public ProductoSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory) {
         super(context, name, factory, version);
     }

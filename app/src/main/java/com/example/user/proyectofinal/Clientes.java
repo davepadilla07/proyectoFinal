@@ -33,7 +33,7 @@ public class Clientes extends AppCompatActivity {
                         startActivity(i);
                         break;
                     case 1:
-                        i = new Intent(Clientes.this,Lista_Productos.class);
+                        i = new Intent(Clientes.this,Lista_Clientes.class);
                         startActivity(i);
                         break;
                 }

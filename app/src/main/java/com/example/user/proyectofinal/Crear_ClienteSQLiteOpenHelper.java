@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class Crear_ClienteSQLiteOpenHelper extends SQLiteOpenHelper {
     private String sql = "CREATE TABLE clientes(tipo text, nitced text, nombre text, telefono text, correo text, direccion text, ciudad text)";
-    static int version=6;
+    static int version=4;
     public Crear_ClienteSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory) {
         super(context, name, factory,version);
     }

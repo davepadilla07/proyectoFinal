@@ -29,6 +29,7 @@
     <string name="error_6">Por favor digite el Modelo</string>
     <string name="error_7">Por favor digite la Serie</string>
     <string name="error_8">Por favor digite la Fecha</string>
+    <string name="error_15">Por favor digite la Descripcion</string>
     <string name="numero">No.</string>
     <string name="registro1">Registrado exitosamente!</string>
     <string name="registro2">Modificado exitosamente!</string>
@@ -91,4 +92,11 @@
         <item>@string/ups1300</item>
         <item>@string/ups1500</item>
     </string-array>
+    <string name="modelo1000">ups1000</string>
+    <string name="modelo1300">ups1300</string>
+    <string name="modelo1500">ups1500</string>
+    <string name="modelo24">br24bpg</string>
+    <string name="modelo350">be350glm</string>
+    <string name="modelo50">bge50ml</string>
+    <string name="tipo">Tipo</string>
 </resources>

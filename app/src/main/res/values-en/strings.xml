@@ -7,7 +7,7 @@
     <string name="cliente">Client</string>
     <string name="confirmacion">Confirmation</string>
     <string name="confirmar">Confirm</string>
-    <string name="correo">Email</string>
+    <string name="correo">E-mail</string>
     <string name="cotizaciones">Quotations</string>
     <string name="descripcion">Description</string>
     <string name="editar">Edit</string>
@@ -15,7 +15,7 @@
     <string name="equipo">Equipment</string>
     <string name="equipos_garantias">Warranty equipment</string>
     <string name="error1_4">Rma existing!</string>
-    <string name="error4_1">Invalid Email!, ex: name@email.com</string>
+    <string name="error4_1">Invalid E-mail!, ex: name@e-mail.com</string>
     <string name="error_1">Please enter the RMA</string>
     <string name="error_2">Please enter the Client</string>
     <string name="error_3">Please enter the Phone number</string>
@@ -40,7 +40,7 @@
     <string name="modelo350">be350glm</string>
     <string name="modelo50">bge50ml</string>
     <string name="numero">No.</string>
-    <string name="pguardado">\"Product saved successfully\"</string>
+    <string name="pguardado">Product saved successfully</string>
     <string name="prestamos">Loan</string>
     <string name="productos">Products</string>
     <string name="productos_disponibles">Available products</string>
@@ -52,4 +52,26 @@
     <string name="clientes">Clients</string>
     <string name="lista_prestamos">Lending List</string>
     <string name="prestamo">Loan</string>
+    <string name="direccion">Adress</string>
+    <string name="error_10">Please enter de client name</string>
+    <string name="error_11">Please enter de client cellphone number</string>
+    <string name="error_12">Please enter de client e-mail</string>
+    <string name="error_13">Please enter de client adress</string>
+    <string name="error_14">Please enter de client city</string>
+    <string name="error_9">Please enter the nit or ID</string>
+    <string name="lista_clientes">Client List</string>
+    <string name="nit">Nit</string>
+    <string name="nit_cedula">Nit or ID</string>
+    <string name="nombre">Name</string>
+    <string name="registrar_clientes">Client registration</string>
+    <string name="mensaje_9">Client saved successfully</string>
+    <string name="ups1000">ups1000</string>
+    <string name="ups1300">ups1300</string>
+    <string name="ups1500">ups1500</string>
+    <string name="be350glm">be350glm</string>
+    <string name="bge50ml">bge50ml</string>
+    <string name="br24bpg">br24bpg</string>
+    <string name="cedula">ID</string>
+    <string name="ciudad">City</string>
+    <string name="error_15">Please enter de description</string>
 </resources>

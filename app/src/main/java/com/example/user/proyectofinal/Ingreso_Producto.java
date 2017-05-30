@@ -119,16 +119,23 @@ public class Ingreso_Producto extends AppCompatActivity {
 
 
     public boolean validarTodo(){
-/*
-        if(cajaModelo.getText().toString().isEmpty()){
-            cajaModelo.setError(getResources().getString(R.string.error_6));
-            return false;
-        }
-        */
+
         if(cajaSerie.getText().toString().isEmpty()){
             cajaSerie.setError(getResources().getString(R.string.error_7));
+            cajaSerie.requestFocus();
             return false;
         }
+        if(cajaDescripcion.getText().toString().isEmpty()){
+            cajaDescripcion.setError(getResources().getString(R.string.error_15));
+            cajaDescripcion.requestFocus();
+            return false;
+        }
+        if(cajaCliente.getText().toString().isEmpty()){
+            cajaCliente.setError(getResources().getString(R.string.error_2));
+            cajaCliente.requestFocus();
+            return false;
+        }
+
         return  true;
     }
 

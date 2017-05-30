@@ -9,7 +9,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Ingresar_Cliente extends AppCompatActivity {
+
 
     private EditText cajaNitCed;
     private EditText cajaNombre;
@@ -84,6 +88,11 @@ public class Ingresar_Cliente extends AppCompatActivity {
             cajaCorreo.requestFocus();
             return false;
         }
+        if (!isEmailValid(cajaCorreo.getText().toString())){
+            cajaCorreo.setError(getResources().getString(R.string.error4_1));
+            cajaCorreo.requestFocus();
+            return false;
+        }
         if(cajaDireccion.getText().toString().isEmpty()){
             cajaDireccion.setError(getResources().getString(R.string.error_13));
             cajaDireccion.requestFocus();
@@ -96,6 +105,20 @@ public class Ingresar_Cliente extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    public static boolean isEmailValid(String email) {
+        boolean isValid = false;
+
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        CharSequence inputStr = email;
+
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+        if (matcher.matches()) {
+            isValid = true;
+        }
+        return isValid;
     }
 
     public boolean validarNitCed(){
@@ -127,6 +150,8 @@ public class Ingresar_Cliente extends AppCompatActivity {
         if(validarNitCed()) {
             c = Datos.buscarCliente(getApplicationContext(), cajaNitCed.getText().toString());
             if(c!=null){
+                if(rdNit.isChecked()) rdNit.setChecked(true);
+                else rdCedula.setChecked(true);
                 cajaNitCed.setText(c.getNitced());
                 cajaNombre.setText(c.getNombre());
                 cajaTelefono.setText(c.getTelefono());

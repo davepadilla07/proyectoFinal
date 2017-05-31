@@ -74,4 +74,7 @@
     <string name="cedula">ID</string>
     <string name="ciudad">City</string>
     <string name="error_15">Please enter de description</string>
+    <string name="error2_1">Client existing!</string>
+    <string name="error7_1">Series existing!</string>
+    <string name="tipo">Type</string>
 </resources>

@@ -40,11 +40,24 @@ public class Ingresar_Cliente extends AppCompatActivity {
         cajaCiudad = (EditText)findViewById(R.id.txtCiudadCliente);
     }
 
+    public boolean buscarExistente(){
+        Crea_Cliente g;
+        if(validarNitCed()) {
+            g = Datos.buscarCliente(getApplicationContext(), cajaNitCed.getText().toString());
+            if(g!=null){
+                cajaNitCed.setError(getResources().getString(R.string.error2_1));
+                cajaNitCed.requestFocus();
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void guardarCli(View v){
         String  tipo, nitced, nombre, telefono, correo, direccion, ciudad;
         Crea_Cliente c;
 
-        if(validarTodo()){
+        if(validarTodo() && buscarExistente()){
 
 
             nitced = cajaNitCed.getText().toString();

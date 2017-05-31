@@ -57,6 +57,7 @@ public class Ingreso extends AppCompatActivity implements View.OnClickListener {
             g = Datos.buscarGarantia(getApplicationContext(), cajaRMA.getText().toString());
             if(g!=null){
                 cajaRMA.setError(getResources().getString(R.string.error1_4));
+                cajaRMA.requestFocus();
                 return false;
             }
         }

@@ -36,6 +36,19 @@ public class Ingreso_Producto extends AppCompatActivity {
         comboModelo.setAdapter(adapter);
     }
 
+    public boolean buscarExistente(){
+        Producto g;
+        if(validarSerie()) {
+            g = Datos.buscarPrestamo(getApplicationContext(), cajaSerie.getText().toString());
+            if(g!=null){
+                cajaSerie.setError(getResources().getString(R.string.error7_1));
+                cajaSerie.requestFocus();
+                return false;
+            }
+        }
+        return true;
+    }
+
     public int fotoseleccionada(int numero){
         int foto[]={R.drawable.be350glm,R.drawable.bge50ml,R.drawable.br24bpg,R.drawable.ups1000,R.drawable.ups1300,R.drawable.ups1500};
         return foto[numero];
@@ -46,7 +59,7 @@ public class Ingreso_Producto extends AppCompatActivity {
         int numero=0;
         Producto p;
 
-        if(validarTodo()){
+        if(validarTodo() && buscarExistente()){
             serie = cajaSerie.getText().toString();
             modelo = comboModelo.getSelectedItem().toString();
             descripcion = cajaDescripcion.getText().toString();

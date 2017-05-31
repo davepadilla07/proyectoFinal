@@ -194,7 +194,7 @@ public class Ingresar_Cliente extends AppCompatActivity {
             if(c!=null){
                 AlertDialog.Builder ventana = new AlertDialog.Builder(this);
                 ventana.setTitle(getResources().getString(R.string.confirmacion));
-                ventana.setMessage(getResources().getString(R.string.error_9));
+                ventana.setMessage(getResources().getString(R.string.mensaje1));
                 ventana.setPositiveButton(getResources().getString(R.string.confirmar), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -202,7 +202,7 @@ public class Ingresar_Cliente extends AppCompatActivity {
                         c = Datos.buscarCliente(getApplicationContext(), cajaNitCed.getText().toString());
                         c.eliminar(getApplicationContext());
                         limpiar();
-                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.mensaje1),
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.mensaje2),
                                 Toast.LENGTH_SHORT).show();
 
                     }

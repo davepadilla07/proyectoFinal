@@ -1,5 +1,7 @@
 package com.example.user.proyectofinal;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -72,7 +74,7 @@ public class Ingreso_Producto extends AppCompatActivity {
             foto = String.valueOf(fotoseleccionada(numero));
 
 
-            //foto = String.valueOf(numeroFoto(modelo));
+
 
             p = new Producto(foto, serie, modelo, descripcion, cliente);
             p.guardarPro(getApplicationContext());
@@ -84,38 +86,8 @@ public class Ingreso_Producto extends AppCompatActivity {
         }
     }
 
-    /*public int numeroFoto(String modelo){
-        int numero, aux = 0;
 
-        int fotos[] = {R.drawable.ups1000,R.drawable.ups1300,R.drawable.ups1500,R.drawable.br24bpg,R.drawable.bge50ml,R.drawable.be350g_lm};
 
-            if (modelo.equals(R.drawable.ups1000)){
-                numero = fotos[0];
-                aux = numero;
-
-            }if (modelo.equals(R.drawable.ups1300)){
-                numero = fotos[1];
-                aux = numero;
-
-            }if (modelo.equals(R.drawable.ups1500)){
-                numero = fotos[2];
-                aux = numero;
-
-            }if (modelo.equals(R.drawable.br24bpg)){
-                numero = fotos[3];
-                aux = numero;
-
-            }if (modelo.equals(R.drawable.bge50ml)){
-                numero = fotos[4];
-                aux = numero;
-
-            }if (modelo.equals(R.drawable.be350g_lm)){
-                numero = fotos[5];
-                aux = numero;
-            }
-
-        return fotos[aux];
-    }*/
 
 
     public boolean validarTodo(){
@@ -161,13 +133,89 @@ public class Ingreso_Producto extends AppCompatActivity {
 
     public void buscar(View v){
         Producto p;
+
         if(validarSerie()) {
             p = Datos.buscarPrestamo(getApplicationContext(), cajaSerie.getText().toString());
             if(p!=null){
                 cajaSerie.setText(p.getSerie());
-                cajaModelo.setText(p.getModelo());
                 cajaDescripcion.setText(p.getDescripcion());
                 cajaCliente.setText(p.getCliente());
+
+                if (p.getModelo().toString().equalsIgnoreCase(getResources().getString(R.string.be350glm))){
+                    comboModelo.setSelection(0);
+                }
+                if (p.getModelo().toString().equalsIgnoreCase(getResources().getString(R.string.bge50ml))){
+                    comboModelo.setSelection(1);
+                }
+                if (p.getModelo().toString().equalsIgnoreCase(getResources().getString(R.string.br24bpg))){
+                    comboModelo.setSelection(2);
+                }
+                if (p.getModelo().toString().equalsIgnoreCase(getResources().getString(R.string.ups1000))){
+                    comboModelo.setSelection(3);
+                }
+                if (p.getModelo().toString().equalsIgnoreCase(getResources().getString(R.string.ups1300))){
+                    comboModelo.setSelection(4);
+                }
+                if (p.getModelo().toString().equalsIgnoreCase(getResources().getString(R.string.ups1500))){
+                    comboModelo.setSelection(5);
+                }
+            }
+        }
+    }
+
+    public void modificar(View v){
+        Producto c,c2;
+        String serie, modelo, descripcion, cliente;
+        if(validarSerie()) {
+            c = Datos.buscarPrestamo(getApplicationContext(), cajaSerie.getText().toString());
+            if(c!=null){
+
+                serie = cajaSerie.getText().toString();
+                modelo = comboModelo.getSelectedItem().toString();
+                descripcion = cajaDescripcion.getText().toString();
+                cliente = cajaCliente.getText().toString();
+
+
+                c2 = new Producto(serie, modelo, descripcion, cliente);
+                c2.modificar(getApplicationContext());
+
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.registro2),
+                        Toast.LENGTH_SHORT).show();
+
+                limpiar();
+            }
+        }
+    }
+
+    public void eliminar(View v){
+        Producto c;
+        if(validarSerie()) {
+            c = Datos.buscarPrestamo(getApplicationContext(), cajaSerie.getText().toString());
+            if(c!=null){
+                AlertDialog.Builder ventana = new AlertDialog.Builder(this);
+                ventana.setTitle(getResources().getString(R.string.confirmacion));
+                ventana.setMessage(getResources().getString(R.string.mensaje1));
+                ventana.setPositiveButton(getResources().getString(R.string.confirmar), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Producto c;
+                        c = Datos.buscarPrestamo(getApplicationContext(), cajaSerie.getText().toString());
+                        c.eliminar(getApplicationContext());
+                        limpiar();
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.mensaje2),
+                                Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+                ventana.setNegativeButton(getResources().getString(R.string.cancelar), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        cajaSerie.requestFocus();
+                    }
+                });
+
+                ventana.show();
             }
         }
     }
